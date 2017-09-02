@@ -6,7 +6,7 @@
 
 首先我们来看一下继承关系：
 
-![ArrayList、LinkedList、Vector的区别](/img/2017.09.02/1.jpg)
+![ArrayList、LinkedList、Vector的区别](http://www.bcoder.top/img/2017.09.02/1.jpg)
 
 从上图我们可以看出，ArrayList、LinkedList、Vector都实现了List的接口。
 
@@ -17,7 +17,7 @@ public class ArrayList<E> extends AbstractList<E>
 implements List<E>, RandomAccess, Cloneable, Serializable
 ```
 
-![ArrayList、LinkedList、Vector的区别](/img/2017.09.02/2.jpg)
+![ArrayList、LinkedList、Vector的区别](http://www.bcoder.top/img/2017.09.02/2.jpg)
 
 
 ②.ArrayList实现方式：
