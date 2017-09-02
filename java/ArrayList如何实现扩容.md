@@ -1,5 +1,9 @@
 # ArrayList如何实现扩容
 
+# ArrayList如何实现扩容
+
+
+---
 
 ## 集合内存分配以及初始化过程图解
 
@@ -58,6 +62,11 @@ public class ArrayList<E> extends AbstractList<E> implements List<E> {
 1.add方法中先调用**ensureCapacity方法**对原数组长度进行扩充，扩充方式为，通过Arrays类的copyOf方法对原数组进行拷贝，长度为原数组的**1.5倍+1**。
 
 2.然后把扩容后的新数组实例对象地址赋值给elementData引用类型变量。扩容完毕。
+
+
+为了自动扩容实现这一机制，java引进了Capacity和size概念，以区别数组的length。为了保证用户增加新的列表对象，java设置了最小容量（minCapacity）
+，通常情况上，它大于列表对象的数目，所以Capactiy虽然就是底层数组的长度（length），但是对于最终用户来讲，它是无意义的。而size存储着列表
+对象的数量，才是最终用户所需要的。为了防止用户错误修改，这一属性被设置为privae的，不过可以通过size()获取。
 
 <br><br>
 ## 扩容性能简单分析

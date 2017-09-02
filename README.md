@@ -25,6 +25,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [ArrayList如何实现扩容](https://github.com/zlnnjit/interview/blob/master/java/ArrayList%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%89%A9%E5%AE%B9.md)
 
++ [java有哪几种线程状态？如何转换？]()
 <br><br><br><br>
 ## SDN篇
 + [Openflow1.3协议分析](http://www.bcoder.top/2017/09/01/OpenFlow1-3%E6%80%BB%E7%BB%93/)
