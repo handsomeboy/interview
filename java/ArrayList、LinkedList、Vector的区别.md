@@ -13,7 +13,7 @@
 ### ArrayList
 ①.类的定义：
 ```
-public class **ArrayList<E>** extends AbstractList<E>
+public class ArrayList<E> extends AbstractList<E>
 implements List<E>, RandomAccess, Cloneable, Serializable
 ```
 
@@ -40,7 +40,7 @@ listIterator遍历（`ListIterator<String> listIterator = list.listIterator();`�
 
 ①.类的定义：
 ```
-public class **LinkedList**<E>  extends AbstractSequentialList<E>
+public class LinkedList<E>  extends AbstractSequentialList<E>
 implements List<E>, Deque<E>, Cloneable, Serializable
 ```
 ②.LinkedList实现方式：
@@ -84,7 +84,7 @@ element() 和 peek() 用于在队列的头部查询元素。与 remove() 方法�
 ### Vector
 ①.类的定义：
 ```
-public class **Vector**<E> extends AbstractList<E>
+public class Vector<E> extends AbstractList<E>
 implements List<E>, RandomAccess, Cloneable, Serializable
 ```
 

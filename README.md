@@ -21,7 +21,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 ## java篇
 ### java集合
-[ArrayList、LinkedList、Vector的区别](http://www.bcoder.top/2017/09/02/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB/)
+[ArrayList、LinkedList、Vector的区别](https://github.com/zlnnjit/interview/blob/master/java/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
 <br><br><br><br>
 ## SDN篇
@@ -65,14 +65,14 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 <br><br><br><br>
 ## java高级篇 
 
-### java8篇
+### java8
 
-### NIO篇
+### NIO
 
-### JUC篇 
+### JUC
 
 <br><br><br><br>
-## Linux篇 
+## Linux篇
 
 
 
