@@ -24,7 +24,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ### java基础
 
 
-+ [为什么重写HashCode还要重写HashCode?怎样进行重写equals和Hashcode方法?](http://www.bcoder.top/2017/02/19/%E6%80%8E%E6%A0%B7%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%86%99equals()%E5%92%8CHashcode()%E6%96%B9%E6%B3%95/)
++ [为什么重写HashCode还要重写HashCode?怎样进行重写equals和Hashcode方法?](http://www.bcoder.top/2017/02/19/%E6%80%8E%E6%A0%B7%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%86%99equals%E5%92%8CHashcode%E6%96%B9%E6%B3%95/)
 
 
 
