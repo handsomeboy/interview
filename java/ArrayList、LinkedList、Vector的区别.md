@@ -1,8 +1,5 @@
 #  ArrayList、LinkedList、Vector的区别
 
-标签（空格分隔）： java
-
----
 
 首先我们来看一下继承关系：
 

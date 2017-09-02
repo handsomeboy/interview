@@ -21,11 +21,13 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 ## java篇
 ### java集合
-[ArrayList、LinkedList、Vector的区别](https://github.com/zlnnjit/interview/blob/master/java/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB.md)
++ [ArrayList、LinkedList、Vector的区别](https://github.com/zlnnjit/interview/blob/master/java/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB.md)
+
++ [ArrayList如何实现扩容](https://github.com/zlnnjit/interview/blob/master/java/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
 <br><br><br><br>
 ## SDN篇
-[Openflow1.3协议分析](http://www.bcoder.top/2017/09/01/OpenFlow1-3%E6%80%BB%E7%BB%93/)
++ [Openflow1.3协议分析](http://www.bcoder.top/2017/09/01/OpenFlow1-3%E6%80%BB%E7%BB%93/)
 
 
 <br><br><br><br>
