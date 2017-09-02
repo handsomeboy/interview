@@ -1,10 +1,4 @@
----
-title: 面试总结
-date: 2017-08-29 21:53:16
-tags: 面试知识目录
-categories: 面试
-top: 1000
----
+
 ### 前言
 
 已经步入大四，下面很长的一段时间，将会对面试题进行总结，
@@ -15,7 +9,8 @@ java开发面试，重点关注内容为：java基础（重点是IO、集合框�
 SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统网络知识（ARP、TCP、IP，net,DDOS等）、Vxlan、Openflow协议分析、opendaylight重点模块分析（OpenflowPlugin、network-topology等模块）、ODL开发遇到的问题、Yang文件基础总结，RPC、Ovsdb协议、OSGI框架。
 
 另外，如果还有余力的话，会对以下内容进行总结：SD-WAN，ODL源码分析、Openstack等
-<!-- more -->
+
+
 本文仅仅针对面试可能出现的问题，故所讲的内容可能不会比较全面，同时也会和之前的文章的内容有些重复。
 
 本文会随着面试的深入，**会不定期更新** 
@@ -27,43 +22,47 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ## java篇
 ### java集合
 [ArrayList、LinkedList、Vector的区别](http://www.bcoder.top/2017/09/02/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB/)
+
+<br><br><br><br>
 ## SDN篇
 [Openflow1.3协议分析](http://www.bcoder.top/2017/09/01/OpenFlow1-3%E6%80%BB%E7%BB%93/)
 
+
+<br><br><br><br>
 ## 数据库篇
 ### Redis
 ### MySQL
 
 
 
-
+<br><br><br><br>
 ## javaweb篇
 
 
 
-
+<br><br><br><br>
 ## 框架篇
 
 
-
+<br><br><br><br>
 ## 数据结构篇
 
 
-
+<br><br><br><br>
 ## 算法篇
 
 
-
+<br><br><br><br>
 ## 前端篇
 
 
-
+<br><br><br><br>
 ## java设计模式篇
 
 
 
 
-
+<br><br><br><br>
 ## java高级篇 
 
 ### java8篇
@@ -72,14 +71,14 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 ### JUC篇 
 
-
+<br><br><br><br>
 ## Linux篇 
 
 
 
 
 
-
+<br><br><br><br>
 ## 工具篇
 
 ### Git
@@ -87,9 +86,9 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ### SVN
 
 ### maven
-
+<br><br><br><br>
 ## 高并发下的数据处理与数据库查询
-
+<br><br><br><br>
 ## 高級篇
 
 ### SOA
