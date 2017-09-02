@@ -20,10 +20,48 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 
 ## java篇
+
+### java基础
+
+
++ (为什么重写HashCode还要重写HashCode?怎样进行重写equals()和Hashcode()方法?)[http://www.bcoder.top/2017/02/19/%E6%80%8E%E6%A0%B7%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%86%99equals()%E5%92%8CHashcode()%E6%96%B9%E6%B3%95/]
+
+
+
++ [java代码的执行顺序](http://www.bcoder.top/2017/05/25/java%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/)
+
+
+
++ [JAVA中Stack和Heap的区别](http://www.bcoder.top/2017/05/25/JAVA%E4%B8%ADStack%E5%92%8CHeap%E7%9A%84%E5%8C%BA%E5%88%AB/)
+
+
+
++ [java Object类常见的问题](http://www.bcoder.top/2017/05/22/java-Object%E7%B1%BB/)
+
+
+
++ [解释Java对象序列化](http://www.bcoder.top/2017/05/13/%E7%90%86%E8%A7%A3Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/)
+
+
+
++ [什么是内存泄漏？怎样解决？](http://www.bcoder.top/2017/03/22/JAVA%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%88%86%E6%9E%90/)
+
+
 ### java集合
+
+
+
 + [ArrayList、LinkedList、Vector的区别](https://github.com/zlnnjit/interview/blob/master/java/%C2%96ArrayList%E3%80%81LinkedList%E3%80%81Vector%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
+
+
+
 + [ArrayList如何实现扩容](https://github.com/zlnnjit/interview/blob/master/java/ArrayList%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E6%89%A9%E5%AE%B9.md)
+
+
++ [Collections常见问题总结](http://www.bcoder.top/2017/03/15/Collections%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93/)
+
+
 
 ### java多线程
 
@@ -63,9 +101,19 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ## 数据结构篇
 
 
+
++ [二叉树](http://www.bcoder.top/2017/08/12/%C2%96%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91/)
+
+
+
+
+
 <br><br><br><br>
 ## 算法篇
 
+
+
++ [八种常见的排序](http://www.bcoder.top/2017/08/06/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E6%8E%92%E5%BA%8F/)
 
 <br><br><br><br>
 ## 前端篇
