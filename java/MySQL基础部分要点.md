@@ -1,6 +1,5 @@
 # MySQL基础部分要点
 
-
 **SQL组成？**
 
 SQL: Structured Query Language, 结构化查询语言(数据以查询为主: 99%是在进行查询操作)
@@ -15,13 +14,17 @@ SQL分为三个部分：
 SQL是关系型数据库的操作指令, SQL是一种约束,但不强制(类似W3C): 不同的数据库产品(如Oracle,mysql)可能内部会有一些细微的区别.
 
 <br>
+
 **MySQL组成？**
+
 
 ![MySQL基础部分要点](http://www.bcoder.top/img/interview/20.png)
 
 
 <br>
+
 **MySQL数据库语句**
+
 
 ```sql
 -- 创建数据库
@@ -62,9 +65,10 @@ alter database informationtest charset GBK;
 drop database informationtest;
 ```
 <br>
-**MySQL表命令？**
-```sql
 
+**MySQL表命令**
+
+```sql
 -- 创建数据表
 -- 进入数据库
 use mydatabase;
@@ -77,8 +81,6 @@ gender varchar(10),
 number varchar(10),
 age int
 )charset utf8;
-
-
 
 -- 创建表
 create table class(
@@ -197,12 +199,14 @@ alter table my_collate_ci collate = utf8_general_ci;
 ```
 
 <br><br>
+
 ## MySQL数据类型
 
 ![MySQL基础部分要点](http://www.bcoder.top/img/interview/21.png)
 
 
 <br>
+
 **整形**
 
 ![MySQL基础部分要点](http://www.bcoder.top/img/interview/22.png)
@@ -210,6 +214,7 @@ alter table my_collate_ci collate = utf8_general_ci;
 SQL中的数值类型全部都是默认有符号: 分正负
 有时候需要使用无符号数据: 需要给数据类型限定: int unsigned; -- 无符号: 从0开始
 <br>
+
 **小数型**
 
 SQL中: 将小数型细分成两种: 浮点型和定点型
@@ -239,7 +244,9 @@ Double: 双精度,占用8个字节存储数据, 精度方位大概为15位左右
 ![MySQL基础部分要点](http://www.bcoder.top/img/interview/24.png)
 
 <br>
+
 **时间日期类型**
+
 
  ![MySQL基础部分要点](http://www.bcoder.top/img/interview/25.png)   
 
@@ -247,6 +254,7 @@ Double: 双精度,占用8个字节存储数据, 精度方位大概为15位左右
 Timestamp字段: 只要当前所在的记录被更新, 该字段一定会自动更新成当前时间
 
 <br>
+
 **字符串类型**
 
 ![MySQL基础部分要点](http://www.bcoder.top/img/interview/26.png)   
@@ -271,7 +279,9 @@ Timestamp字段: 只要当前所在的记录被更新, 该字段一定会自动�
 使用: 可以使用元素列表中的元素(多个), 使用逗号分隔
 
 <br>
+
 **类型操作相关SQL**
+
 ```sql
 -- 创建时间日期表
 create table my_date(
@@ -319,7 +329,9 @@ insert into my_set values(3);
 
 ```
 <br><br>
+
 ## 列属性
+
 NULL(默认的)
 NOT NULL(不为空)
 comment, 描述, 没有实际含义: 是专门用来描述字段,会根据表创建语句保存: 用来给程序猿(数据库管理员)来进行了解的.
@@ -428,6 +440,7 @@ alter table my_unique3 add unique key(number);
 alter table my_unique3 drop index number;
 ```
 <br><br>
+
 ## 数据库三大范式
 
 范式: Normal Format, 是一种离散数学中的知识, 是为了解决一种数据的存储与优化的问题: 保存数据的存储之后, 凡是能够通过关系寻找出来的数据,坚决不再重复存储: 终极目标是为了减少数据的冗余.
@@ -438,27 +451,36 @@ Mysql属于关系型数据库: 有空间浪费: 也是致力于节省存储空�
 
 
 **第一范式**
+
 在设计表存储数据的时候, 如果表中设计的字段存储的数据,在取出来使用之前还需要额外的处理(拆分),那么说表的设计不满足第一范式: 第一范式要求字段的数据具有原子性: 不可再分.
 
 <br>
+
 **第二范式**
+
  在数据表设计的过程中,如果有复合主键(多字段主键), 且表中有字段并不是由整个主键来确定, 而是依赖主键中的某个字段(主键的部分): 存在字段依赖主键的部分的问题, 称之为部分依赖: 第二范式就是要解决表设计不允许出现部分依赖.
  
  <br>
+ 
  **第三范式**
+ 
 要满足第三范式,必须满足第二范式.
 
 第三范式: 理论上讲,应该一张表中的所有字段都应该直接依赖主键(逻辑主键: 代表的是业务主键), 如果表设计中存在一个字段, 并不直接依赖主键,而是通过某个非主键字段依赖,最终实现依赖主键: 把这种不是直接依赖主键,而是依赖非主键字段的依赖关系称之为传递依赖. 第三范式就是要解决传递依赖的问题.
 
 ## 数据库高级操作
+
 **主键冲突**
+
 当主键存在冲突的时候(Duplicate key),可以选择性的进行处理: 更新和替换
 
 主键冲突: 更新操作
 Insert into 表名[(字段列表:包含主键)] values(值列表) on duplicate key update 字段 = 新值;
 
 <br>
+
 **蠕虫复制**
+
 蠕虫复制: 从已有的数据中去获取数据,然后将数据又进行新增操作: 数据成倍的增加.
 
 表创建高级操作: 从已有表创建新表(复制表结构)
@@ -470,6 +492,7 @@ Insert into 表名[(字段列表)] select 字段列表/* from 数据表名;
 蠕虫复制的意义
 1.	从已有表拷贝数据到新表中
 2.	可以迅速的让表中的数据膨胀到一定的数量级: 测试表的压力以及效率
+
 <br>
 **更新数据**
 基本语法
@@ -479,6 +502,7 @@ Update 表名 set 字段 = 值 [where条件];
 Update 表名 set 字段 = 值 [where条件] [limit 更新数量];
 
 <br>
+
 **删除数据**
 与更新类似: 可以通过limit来限制数量
 Delete from 表名 [where条件] [limit 数量];
