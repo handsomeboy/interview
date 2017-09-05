@@ -1,7 +1,5 @@
 # Cookie和Session的区别？
 
-
-
 ## Cookie和Session概述
 先来一张图看一下cookie和session:
 
@@ -85,6 +83,7 @@ Session是另一种记录客户状态的机制，不同的是Cookie保存在客�
 ![Cookie和Session的区别](http://www.bcoder.top/img/interview/19.jpg)
 
 <br>
+
 **java中session有哪些方法？**
 
 void setAttribute(String attribute, Object value)：

@@ -49,7 +49,8 @@ INDEX index_name (title(length))
 DROP INDEX index_name ON table
 ```
 <br>
-**2. 唯一索引(unique)**
+
+**2.唯一索引(unique)**
 
 与普通索引类似，不同的就是：索引列的值必须唯一，但**允许有空值**（注意和主键不同）。如果是组合索引，则列值的组合必须唯一，创建方法和普通索引类似。
 
@@ -70,6 +71,7 @@ UNIQUE indexName (title(length))
 ```
 
 <br>
+
 **3. 全文索引（FULLTEXT）**
 
 MySQL从3.23.23版开始支持全文索引和全文检索，**FULLTEXT索引仅可用于MyISAM 表**；他们可以从CHAR、VARCHAR或TEXT列中作为CREATE TABLE语句的一部分被创建，或是随后使用ALTER TABLE 或CREATE INDEX被添加。
@@ -93,6 +95,7 @@ ALTER TABLE article ADD FULLTEXT index_content(content)
 CREATE FULLTEXT INDEX index_content ON article(content)
 ```
 <br>
+
 **4. 单列索引、多列索引**
 
 多个单列索引与单个多列索引的查询效果不同，因为执行查询时，MySQL只能使用一个索引，会从多个索引中选择一个限制最为严格的索引。
