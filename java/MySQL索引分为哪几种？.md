@@ -14,11 +14,7 @@ mysql> SELECT id,FROM_UNIXTIME(time) FROM article WHERE a.title='测试标题'
 mysql> ALTER TABLE article ADD INDEX index_article_title ON title(200);
 ```
 
-再次执行上述查询语句，其对比非常明显：
-
-
-
-
+再次执行上述查询语句，其对比非常明显，
 <br><br>
 
 
@@ -75,6 +71,7 @@ UNIQUE indexName (title(length))
 
 <br>
 **3. 全文索引（FULLTEXT）**
+
 MySQL从3.23.23版开始支持全文索引和全文检索，**FULLTEXT索引仅可用于MyISAM 表**；他们可以从CHAR、VARCHAR或TEXT列中作为CREATE TABLE语句的一部分被创建，或是随后使用ALTER TABLE 或CREATE INDEX被添加。
 
 对于较大的数据集，将你的资料输入一个没有FULLTEXT索引的表中，然后创建索引，其速度比把资料输入现有FULLTEXT索引的速度更为快。不过切记对于大容量的数据表，生成全文索引是一个非常消耗时间非常消耗硬盘空间的做法。

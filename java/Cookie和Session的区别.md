@@ -5,7 +5,7 @@
 ## Cookie和Session概述
 先来一张图看一下cookie和session:
 
-!!17.png
+![Cookie和Session的区别](http://www.bcoder.top/img/interview/17.png)
 
 <br><br>
 ## Cookie
@@ -17,9 +17,9 @@ Cookie意为“甜饼”，是由W3C组织提出，最早由Netscape社区发展
 
 Cookie实际上是一小段的文本信息。客户端请求服务器，如果服务器需要记录该用户状态，就使用response向客户端浏览器颁发一个Cookie。**客户端浏览器会把Cookie保存起来**。当浏览器再请求该网站时，浏览器把请求的网址连同该Cookie一同提交给服务器。服务器检查该Cookie，以此来辨认用户状态。服务器还可以根据需要修改Cookie的内容。
 
-!!18.jpg
-
+![Cookie和Session的区别](http://www.bcoder.top/img/interview/18.jpg)
 <br>
+
 **cookie具体内容是什么？**
 
 ```
@@ -41,7 +41,9 @@ bdime: 0
 ```
 
 <br>
+
 **java中cookie的方法**
+
 ```java
 Cookie cookie = new Cookie("username","helloweenvsfei"); // 新建Cookie
 cookie.setMaxAge(Integer.MAX_VALUE); // 设置生命周期为MAX_VALUE
@@ -50,7 +52,9 @@ cookie.setDomain(".helloweenvsfei.com"); // 设置域名
 response.addCookie(cookie); // 输出到客户端
 ```
 <br>
+
 **Cookie有哪些好处？**
+
 1、Cookie能使站点跟踪特定访问者的访问次数、最后访问时间和访问者进入站点的路径 
 
 2、Cookie能告诉在线广告商广告被点击的次数，从而可以更精确的投放广告 
@@ -59,7 +63,9 @@ response.addCookie(cookie); // 输出到客户端
 
 4、Cookie能帮助站点统计用户个人资料以实现各种各样的个性化服务 
 <br>
+
 **cookie有哪些限制？**
+
 1、必须在HTML文件的内容输出之前设置；
 
 2、不同的浏览器对Cookie的处理不一致，且有时会出现错误的结果。
@@ -68,12 +74,16 @@ response.addCookie(cookie); // 输出到客户端
 
 
 <br><br>
+
 ## Session
+
 **什么是Session**
-Session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而Session**保存在服务器上**。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是Session。客户端浏览器再次访问时只需要从该Session中查找该客户的状态就可以了。
+
+Session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而Session **保存在服务器上**。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是Session。客户端浏览器再次访问时只需要从该Session中查找该客户的状态就可以了。
 如果说Cookie机制是通过检查客户身上的“通行证”来确定客户身份的话，那么Session机制就是通过检查服务器上的“客户明细表”来确认客户身份。Session相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。
 
-!!19.jpg
+![Cookie和Session的区别](http://www.bcoder.top/img/interview/19.jpg)
+
 <br>
 **java中session有哪些方法？**
 
@@ -100,6 +110,7 @@ void invalidate()：使该Session失效
 
 
 <br>
+
 **Session有什么优点？**
 
 1.如果要在诸多Web页间传递一个变量，那么用Session变量要比通过QueryString传递变量可使问题简化。
@@ -111,6 +122,7 @@ Server等的使用，已不必再将所有用户化过程置入Session变量了�
 
 
 **Session有什么缺点？**
+
 1.Session变量和cookies是同一类型的。如果某用户将浏览器设置为不兼容任何cookie，那么该用户就无法使用这个Session变量！ 
 
 2.当一个用户访问某页面时，每个Session变量的运行环境便自动生成，这些Session变量可在用户离开该页面后仍保留20分钟！（事实上，这些变量一直可保留至“timeout”。“timeout”的时间长短由Web服务器管理员设定。一些站点上的变量仅维持了3分钟，一些则为10分钟，还有一些则保留至默认值20分钟。）所以，如果在Session中置入了较大的对象（如ADO 

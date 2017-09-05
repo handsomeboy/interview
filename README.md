@@ -87,7 +87,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 <br><br><br><br>
 ## 数据库篇
 ### MySQL
-+ [MySQL索引有哪几种？]
++ [MySQL索引有哪几种？](https://github.com/zlnnjit/interview/blob/master/java/MySQL%E7%B4%A2%E5%BC%95%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F.md)
 
 ### Redis
 
@@ -95,7 +95,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 <br><br><br><br>
 ## javaweb篇
-+ [Cookie和Session的区别？]()
++ [Cookie和Session的区别？](https://github.com/zlnnjit/interview/blob/master/java/Cookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
 
 <br><br><br><br>
