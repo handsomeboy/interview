@@ -179,16 +179,17 @@ JVM将类加载过程分为三个步骤：装载（Load），链接（Link）和
 
 ![JVM如何加载字节码文件?](http://www.bcoder.top/img/interview/31.jpg)
 
-![JVM如何加载字节码文件?](http://www.bcoder.top/img/interview/32.jpg)
+![JVM如何加载字节码文件?](http://www.bcoder.top/img/interview/33.jpg)
 
 类的加载的最终产品是位于堆区中的Class对象
 
 Class对象封装了类在方法区内的数据结构，并且向Java程序员提供了访问方法区内的数据结构的接口
 
 **加载类的方式有以下几种：**
- 1）从本地系统直接加载
-2）通过网络下载.class文件
-3）从zip，jar等归档文件中加载.class文件
-4）从专有数据库中提取.class文件
-5）将Java源文件动态编译为.class文件（服务器）
+
+1. 从本地系统直接加载
+2. 通过网络下载.class文件
+3. 从zip，jar等归档文件中加载.class文件
+4. 从专有数据库中提取.class文件
+5. 将Java源文件动态编译为.class文件（服务器）
 
