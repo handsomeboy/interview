@@ -59,16 +59,19 @@ WAITING状态
 调用Thread对象的join方法，但没有指定超时值。
 调用LockSupport对象的park方法。
 
+
 提到WAITING状态，顺便提一下TIMED_WAITING状态的场景。 
 TIMED_WAITING状态
 
 线程处于TIMED_WAITING状态的场景。
+
 
 >调用Thread.sleep方法。
 调用Object对象的wait方法，指定超时值。
 调用Thread对象的join方法，指定超时值。
 调用LockSupport对象的parkNanos方法。
 调用LockSupport对象的parkUntil方法。
+
 
 
 
