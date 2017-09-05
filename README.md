@@ -70,6 +70,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [java有哪几种线程状态？如何转换？](https://github.com/zlnnjit/interview/blob/master/java/java%E6%9C%89%E5%93%AA%E5%87%A0%E7%A7%8D%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81%EF%BC%9F%E5%A6%82%E4%BD%95%E8%BD%AC%E6%8D%A2%EF%BC%9F.md)
 
++ [JAVA线程中BLOCKED和WAITING有什么区别?]()
 
 + [进程和线程的区别,进程间如何通信？](https://github.com/zlnnjit/interview/blob/master/java/%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E7%9A%84%E5%8C%BA%E5%88%AB%2C%E8%BF%9B%E7%A8%8B%E9%97%B4%E5%A6%82%E4%BD%95%E9%80%9A%E4%BF%A1%EF%BC%9F.md)
 
@@ -95,6 +96,8 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [MySQL高级部分要点]()
 
+
++ [索引有什么用？如何建索引？]()
 
 + [MySQL索引有哪几种？](https://github.com/zlnnjit/interview/blob/master/java/MySQL%E7%B4%A2%E5%BC%95%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F.md)
 
