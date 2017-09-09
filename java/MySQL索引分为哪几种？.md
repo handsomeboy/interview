@@ -98,7 +98,9 @@ CREATE FULLTEXT INDEX index_content ON article(content)
 **4. 单列索引、多列索引**
 
 多个单列索引与单个多列索引的查询效果不同，因为执行查询时，MySQL只能使用一个索引，会从多个索引中选择一个限制最为严格的索引。
+
 <br>
+
 **5. 组合索引（最左前缀）**
 
 平时用的SQL查询语句一般都有比较多的限制条件，所以为了进一步榨取MySQL的效率，就要考虑建立组合索引。例如上表中针对title和time建立一个组合索引：ALTER TABLE article ADD INDEX index_titme_time (title(50),time(10))。建立这样的组合索引，其实是相当于分别建立了下面两组组合索引：
