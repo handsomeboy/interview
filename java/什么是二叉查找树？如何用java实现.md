@@ -51,7 +51,7 @@ BSTree是二叉树，它保护了二叉树的根节点mRoot；mRoot是BSTNode类
 ## JAVA代码实现
 
 
-```
+```java
 
 public class BinarySearchTree<T extends Comparable<T>>{
 
