@@ -82,12 +82,20 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [JVM如何加载字节码文件?](https://github.com/zlnnjit/interview/blob/master/java/JVM%E5%A6%82%E4%BD%95%E5%8A%A0%E8%BD%BD%E5%AD%97%E8%8A%82%E7%A0%81%E6%96%87%E4%BB%B6.md)
 
++ [简述JVM垃圾回收机制（GC）]()
+
 <br><br><br><br>
 ## SDN篇
 + [Openflow1.3协议分析](http://www.bcoder.top/2017/09/01/OpenFlow1-3%E6%80%BB%E7%BB%93/)
 
 
 <br><br><br><br>
+
+## 网络篇
++ [TCP为什么需要三次握手和四次挥手？]()
+
+<br><br><br><br>
+
 ## 数据库篇
 ### SQL
 
@@ -123,7 +131,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [二叉树](http://www.bcoder.top/2017/08/12/%C2%96%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E4%B9%8B%E4%BA%8C%E5%8F%89%E6%A0%91/)
 
-
++ [什么是二叉查找树？如何用java实现?]()
 
 
 
@@ -137,6 +145,8 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 
 + [如何实现全排列?]()
+
+
 
 <br><br><br><br>
 ## 前端篇
