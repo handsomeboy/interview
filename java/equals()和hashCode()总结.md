@@ -38,7 +38,7 @@ public boolean equals(Object obj) {
 
 ## 为什么重写equals()的同时还得重写hashCode()
 
-![equals()和hashCode()总结](http://www.bcoder.top/img/interview/43.png)
+![equals()和hashCode()总结](http://www.bcoder.top/img/interview/43.jpg)
 
 
 从上面的分析过程我们能看出将一个（key，value）加入map中其实仅仅与key有关，而且在加入过程中首先使用到了hashcode然后使用了equals，所以说如果equals表示了两个对象的相等关系却没有保证其hashcode也相等就会出现在hashmap中加入了两个相等的key的情况，这也就是为什么在重写equals的同时一定要重写hashcode的根本原因。

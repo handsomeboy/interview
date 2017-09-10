@@ -42,7 +42,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [解释Java对象序列化](http://www.bcoder.top/2017/05/13/%E7%90%86%E8%A7%A3Java%E5%AF%B9%E8%B1%A1%E5%BA%8F%E5%88%97%E5%8C%96/)
 
-
++ [java异常总结](http://www.bcoder.top/2017/06/03/java-%E5%BC%82%E5%B8%B8%E6%9C%BA%E5%88%B6/)
 
 + [什么是内存泄漏？怎样解决？](http://www.bcoder.top/2017/03/22/JAVA%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%88%86%E6%9E%90/)
 
@@ -125,6 +125,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ## javaweb篇
 + [Cookie和Session的区别？](https://github.com/zlnnjit/interview/blob/master/java/Cookie%E5%92%8CSession%E7%9A%84%E5%8C%BA%E5%88%AB.md)
 
++ [jdbc总结](http://www.bcoder.top/2017/03/25/jdbc%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/)
 
 <br><br><br><br>
 ## 框架篇
