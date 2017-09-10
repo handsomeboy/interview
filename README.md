@@ -127,6 +127,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [jdbc总结](http://www.bcoder.top/2017/03/25/jdbc%E5%A4%8D%E4%B9%A0%E6%80%BB%E7%BB%93/)
 
++ [Servlet处理请求的流程，有哪些方法？](https://github.com/zlnnjit/interview/blob/master/java/servlet%E5%A4%84%E7%90%86%E8%AF%B7%E6%B1%82%E7%9A%84%E6%B5%81%E7%A8%8B%EF%BC%8C%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%9F.md)
 <br><br><br><br>
 ## 框架篇
 
@@ -158,6 +159,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ## Linux篇
 + [解释一下Linux软链接和硬链接?](https://github.com/zlnnjit/interview/blob/master/java/Linux%E8%BD%AF%E9%93%BE%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5.md)
 
++ [面试中遇到的Linux命令（持续更新）]()
 <br><br><br><br>
 ## 前端篇
 

@@ -1,4 +1,4 @@
-# servlet处理请求的流程，有哪些方法？
+# Servlet处理请求的流程，有哪些方法？
 
 
 
@@ -6,7 +6,7 @@
 
 首先，我们先看一下简单的图解：
 
-![ servlet处理请求的流程，有哪些方法？](http://www.bcoder.top/img/interview/ 44.jpg)
+![ servlet处理请求的流程，有哪些方法？](http://www.bcoder.top/img/interview/44.jpg)
 
 
 下面来详细介绍一下servlet请求调用过程：
