@@ -24,9 +24,9 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ### java基础
 
 
-+ [为什么重写HashCode还要重写HashCode?怎样进行重写equals和Hashcode方法?](http://www.bcoder.top/2017/02/19/%E6%80%8E%E6%A0%B7%E8%BF%9B%E8%A1%8C%E9%87%8D%E5%86%99equals%E5%92%8CHashcode%E6%96%B9%E6%B3%95/)
++ [equals()和hashCode()总结]()
 
-+ [ String str="ubuntu"以及String str = new String("ubuntu")的内存分配问题]()
++ [ String str="ubuntu"以及String str = new String("ubuntu")的内存分配问题](https://github.com/zlnnjit/interview/blob/master/java/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98.md)
 
 + [java代码的执行顺序](http://www.bcoder.top/2017/05/25/java%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/)
 
@@ -80,7 +80,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 + [java线程如何通信](https://github.com/zlnnjit/interview/blob/master/java/java%E7%BA%BF%E7%A8%8B%E5%A6%82%E4%BD%95%E9%80%9A%E4%BF%A1.md)
 
 
-+ [使用java简单写一个死锁，并说明如何避免死锁]()
++ [使用java简单写一个死锁，并说明如何避免死锁](https://github.com/zlnnjit/interview/blob/master/java/%E4%BD%BF%E7%94%A8java%E7%AE%80%E5%8D%95%E5%86%99%E4%B8%80%E4%B8%AA%E6%AD%BB%E9%94%81%EF%BC%8C%E5%B9%B6%E8%AF%B4%E6%98%8E%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%E6%AD%BB%E9%94%81.md)
 
 ### JVM
 
@@ -115,7 +115,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [MySQL索引有哪几种？](https://github.com/zlnnjit/interview/blob/master/java/MySQL%E7%B4%A2%E5%BC%95%E5%88%86%E4%B8%BA%E5%93%AA%E5%87%A0%E7%A7%8D%EF%BC%9F.md)
 
-+ [简述事务的特性以及事务的隔离级别]()
++ [简述事务的特性以及事务的隔离级别](https://github.com/zlnnjit/interview/blob/master/java/%E7%AE%80%E8%BF%B0%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7%E4%BB%A5%E5%8F%8A%E4%BA%8B%E5%8A%A1%E7%9A%84%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB.md)
 
 ### NoSQL
 
@@ -153,6 +153,9 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 + [如何实现全排列?](https://github.com/zlnnjit/interview/blob/master/java/如何实现全排列.md)
 
 
+<br><br><br><br>
+## Linux篇
++ [解释一下Linux软链接和硬链接?](https://github.com/zlnnjit/interview/blob/master/java/Linux%E8%BD%AF%E9%93%BE%E6%8E%A5%E5%92%8C%E7%A1%AC%E9%93%BE%E6%8E%A5.md)
 
 <br><br><br><br>
 ## 前端篇
@@ -177,9 +180,6 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 
 
-<br><br><br><br>
-## Linux篇
-+ [解释一下Linux软链接和硬链接?]()
 
 
 
