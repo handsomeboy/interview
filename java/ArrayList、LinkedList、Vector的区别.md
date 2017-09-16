@@ -1,13 +1,14 @@
 #  ArrayList、LinkedList、Vector的区别
 
 
+
 首先我们来看一下继承关系：
 
 ![ArrayList、LinkedList、Vector的区别](http://www.bcoder.top/img/2017.09.02/1.jpg)
 
 从上图我们可以看出，ArrayList、LinkedList、Vector都实现了List的接口。
 
-### ArrayList
+## 1. ArrayList
 ①.类的定义：
 ```
 public class ArrayList<E> extends AbstractList<E>
@@ -27,50 +28,66 @@ List 接口的**大小可变数组**的实现。实现了所有可选列表操�
 此类的 iterator 和 listIterator 方法返回的迭代器是快速失败的：在创建迭代器之后，除非通过迭代器自身的 remove 或 add 方法从结构上对列表进行修改，否则在任何时间以任何方式对列表进行修改，迭代器都会抛出 ConcurrentModificationException。因此，**面对并发的修改，迭代器很快就会完全失败**，而不是冒着在将来某个不确定时间发生任意不确定行为的风险。 注意，迭代器的快速失败行为无法得到保证，因为一般来说，不可能对是否出现不同步并发修改做出任何硬性保证。快速失败迭代器会尽最大努力抛出 ConcurrentModificationException。因此，为提高这类迭代器的正确性而编写一个依赖于此异常的程序是错误的做法：迭代器的快速失败行为应该仅用于检测 bug。
 
 ⑤.ArrayList遍历方式：
+
 普通for循环；
+
 增强for循环；
+
 iterator遍历（`Iterator<String> it = list.iterator();`）；
+
 listIterator遍历（`ListIterator<String> listIterator = list.listIterator();`）
+
 增强for循环、iterator遍历、listIterator遍历中不能增加和删除元素
 
-### LinkedList
+## 2. LinkedList
 
 ①.类的定义：
-```
+
+```java
 public class LinkedList<E>  extends AbstractSequentialList<E>
 implements List<E>, Deque<E>, Cloneable, Serializable
 ```
+
 ②.LinkedList实现方式：
+
 List 接口：
-    **链表**实现。实现所有可选的列表操作，并且允许所有元素（**包括 null**）。除了实现 List 接口外，LinkedList 类还为在列表的**开头及结尾 get、remove 和 insert** 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。
+
+ **链表**实现。实现所有可选的列表操作，并且允许所有元素（**包括 null**）。除了实现 List 接口外，LinkedList 类还为在列表的**开头及结尾 get、remove 和 insert** 元素提供了统一的命名方法。这些操作允许将链接列表用作堆栈、队列或双端队列。
 
 Deque 接口：
+
 为 add()、offer()、peek()、element()、poll()、 remove()提供先进先出队列操作，以及其他堆栈和双端队列操作。
 
-**扩展一：Deque和Queue的区别：**
+
+### 2.1. 扩展一：Deque和Queue的区别：
 队列（Queue）是常用的数据结构，可以将队列看成特殊的线性表;
 队列限制了对线性表的访问方式：只能从线性表的一端添加（offer）元素，从另一端取出（poll）元素。
 Deque是Queue的子接口，定义了所谓“双端队列”即从队列的两端分别可以入队（offer）和出队（poll），LinkedList实现了该接口。
 如果将Deque限制为只能从一端入队和出队，则可实现“栈”（Stack）的数据结构。
 
 
-**扩展二：6种方法的区别：**
-offer，add区别：
+### 扩展二：6种方法的区别：
+
+**offer，add区别**：
+
 一些队列有大小限制，因此如果想在一个满的队列中加入一个新项，多出的项就会被拒绝。
 这时新的 offer 方法就可以起作用了。它不是对调用 add() 方法抛出一个 unchecked 异常，而只是得到由 offer() 返回的 false。 
  
-poll，remove区别：
+**poll，remove区别**：
+
 remove() 和 poll() 方法都是从队列中删除第一个元素。remove() 的行为与 Collection 接口的版本相似，
 但是新的 poll() 方法在用空集合调用时不是抛出异常，只是返回 null。因此新的方法更适合容易出现异常条件的情况。
  
-peek，element区别：
+**peek，element区别**：
 element() 和 peek() 用于在队列的头部查询元素。与 remove() 方法类似，在队列为空时， element() 抛出一个异常，而 peek() 返回 null
 
 
 所有操作都是按照**双向链表**的需要执行的。在列表中编索引的操作将从开头或结尾遍历列表（从靠近指定索引的一端）。
 
 ③.LinkedList非线程安全：
+
 注意，此实现**不是同步**的。如果多个线程同时访问一个链接列表，而其中至少一个线程从结构上修改了该列表，则它必须 保持外部同步。（结构修改指添加或删除一个或多个元素的任何操作；仅设置元素的值不是结构修改。）这一般通过**对自然封装该列表的对象进行同步操作来完成**。如果不存在这样的对象，则应该使用 **Collections.synchronizedList** 方法来“包装”该列表。最好在创建时完成这一操作，以防止对列表进行意外的不同步访问，如下所示：
+
 `List list = Collections.synchronizedList(new LinkedList(...));`
 
 ④.遍历修改
@@ -78,7 +95,7 @@ element() 和 peek() 用于在队列的头部查询元素。与 remove() 方法�
 
 注意，迭代器的快速失败行为不能得到保证，一般来说，存在不同步的并发修改时，不可能作出任何硬性保证。快速失败迭代器尽最大努力抛出 ConcurrentModificationException。因此，编写依赖于此异常的程序的方式是错误的，正确做法是：迭代器的快速失败行为应该仅用于检测程序错误。
 
-### Vector
+## 3. Vector
 ①.类的定义：
 ```
 public class Vector<E> extends AbstractList<E>
@@ -86,22 +103,22 @@ implements List<E>, RandomAccess, Cloneable, Serializable
 ```
 
 
-Vector 类可以**实现可增长的对象数组**。与数组一样，它包含可以使用整数索引进行访问的组件。但是，Vector 的大小可以根据需要增大或缩小，以适应创建 Vector 后进行添加或移除项的操作。
+Vector 类可以**实现可增长的对象数组**。与数组一样，它包含可以使用整数索引进行访问的组件。但是，Vector的大小可以根据需要增大或缩小，以适应创建Vector后进行添加或移除项的操作。
 
 
 
-由 Vector 的 iterator 和 listIterator 方法所返回的迭代器是快速失败的：如果在迭代器创建后的任意时间从结构上修改了向量（通过迭代器自身的 remove 或 add 方法之外的任何其他方式），则迭代器将抛出 ConcurrentModificationException。因此，面对并发的修改，迭代器很快就完全失败，而不是冒着在将来不确定的时间任意发生不确定行为的风险。Vector 的 elements 方法返回的 Enumeration不是快速失败的。
+由 Vector 的 iterator和listIterator方法所返回的迭代器是快速失败的：如果在迭代器创建后的任意时间从结构上修改了向量（通过迭代器自身的remove或add方法之外的任何其他方式），则迭代器将抛出 ConcurrentModificationException。因此，面对并发的修改，迭代器很快就完全失败，而不是冒着在将来不确定的时间任意发生不确定行为的风险。Vector的elements方法返回的Enumeration不是快速失败的。
 
 注意，迭代器的快速失败行为不能得到保证，一般来说，存在不同步的并发修改时，不可能作出任何坚决的保证。快速失败迭代器尽最大努力抛出 ConcurrentModificationException。因此，编写依赖于此异常的程序的方式是错误的，正确做法是：迭代器的快速失败行为应该仅用于检测 bug。
 
 
 从 Java 2 平台 v1.2 开始，此类改进为可以实现 List 接口，使它成为 Java Collections Framework 的成员。与新 collection 实现不同，**Vector 是同步的**。
 
-### 三者的区别
+## 4. 三者的区别
     
 ArrayList 本质上是一个可改变大小的**数组**.当元素加入时,其大小将会动态地增长.内部的元素可以直接通过get与set方法进行访问.元素顺序存储,**随机访问很快，删除非头尾元素慢，新增元素慢而且费资源** ,较适用于无频繁增删的情况,比数组效率低，如果不是需要可变数组，可考虑使用数组 ,**非线程安全**.
 
-LinkedList 是一个**双链表**,在添加和删除元素时具有比ArrayList更好的性能.但在get与set方面弱于ArrayList. 适用于：没有大规模的随机读取，大量的增加/删除操作.**随机访问很慢，增删操作很快**，不耗费多余资源 ,允许null元素,**非线程安全.** 
+LinkedList 是一个**双链表**,在添加和删除元素时具有比ArrayList更好的性能.但在get与set方面弱于ArrayList. 适用于：没有大规模的随机读取，大量的增加/删除操作.**随机访问很慢，增删操作很快**，不耗费多余资源 ,允许null元素,**非线程安全** .
 
 Vector （类似于ArrayList）但其是**同步**的，开销就比ArrayList要大。如果你的程序本身是线程安全的，那么使用ArrayList是更好的选择。
 
