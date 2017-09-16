@@ -1,8 +1,9 @@
 # equals()和hashCode()总结
 
+
 首先，我们要明确一点，hashcode()方法和equals()方法都来源于Object类
 
-## HashCode()作用
+## 1. HashCode()作用
 
 1、HashCode的存在主要是为了查找的快捷性，HashCode是用来在散列存储结构中确定对象的存储地址的 
 
@@ -12,7 +13,7 @@
 
 4、如果两个对象的HashCode相同，不代表两个对象就相同，只能说明这两个对象在散列存储结构中，存放于同一个位置 
 
-### 举个实际的例子Set
+### 1.1 举个实际的例子Set
 
 我们知道Set里面的元素是不可以重复的，那么如何做到？Set是根据equals()方法来判断两个元素是否相等的。
 
@@ -22,7 +23,7 @@
 
 如果原来的Set里面有相同的元素，只要HashCode的生成方式定义得好（不重复），不管Set里面原来有多少元素，只需要执行一次的equals就可以了。这样一来，实际调用equals方法的次数大大降低， 提高了效率。
 
-## equals()作用
+## 2. equals()作用
 
 首先，我们来看看Object如何实现equals方法的
 ```java
@@ -36,9 +37,11 @@ public boolean equals(Object obj) {
 默认情况下也就是从超类Object继承而来的equals方法与‘==’是完全等价的，比较的都是对象的内存地址，但我们可以重写equals方法，使其按照我们的需求的方式进行比较，如String类重写了equals方法，使其比较的是字符的序列，而不再是内存地址。
 
 
-## 为什么重写equals()的同时还得重写hashCode()
+## 3. 为什么重写equals()的同时还得重写hashCode()
 
 ![equals()和hashCode()总结](http://www.bcoder.top/img/interview/43.jpg)
+
+
 
 
 从上面的分析过程我们能看出将一个（key，value）加入map中其实仅仅与key有关，而且在加入过程中首先使用到了hashcode然后使用了equals，所以说如果equals表示了两个对象的相等关系却没有保证其hashcode也相等就会出现在hashmap中加入了两个相等的key的情况，这也就是为什么在重写equals的同时一定要重写hashcode的根本原因。

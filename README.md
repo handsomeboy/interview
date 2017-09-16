@@ -24,7 +24,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 ### java基础
 
 
-+ [equals()和hashCode()总结]()
++ [equals()和hashCode()总结](https://github.com/zlnnjit/interview/blob/master/java/equals()%E5%92%8ChashCode()%E6%80%BB%E7%BB%93.md)
 
 + [ String str="ubuntu"以及String str = new String("ubuntu")的内存分配问题](https://github.com/zlnnjit/interview/blob/master/java/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E5%86%85%E5%AD%98%E5%88%86%E9%85%8D%E9%97%AE%E9%A2%98.md)
 
