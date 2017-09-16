@@ -1,9 +1,10 @@
 # MySQL的联合索引什么情况下可以生效？联合索引和单列索引有什么区别？
 
 
-## 问题回顾
 
-### 为什么使用索引
+## 1. 问题回顾
+
+### 1.1 为什么使用索引
 
 **在无索引的情况下，MySQL会扫描整张表来查找符合sql条件的记录**，其时间开销与表中数据量呈正相关。对关系型数据表中的某些字段建索引可以极大提高查询速度（当然，不同字段是否selective会导致这些字段建立的索引对查询速度的提升幅度不同，而且**索引也并非越多越好，因为写入或删除时需要更新索引信息**）。
 
@@ -15,7 +16,7 @@
 
 3) 树本身的rebalance操作很高效。
 
-### MySQL使用索引的场景
+### 1.2 MySQL使用索引的场景
 
 MySQL在以下操作场景下会使用索引：
 
@@ -32,7 +33,7 @@ MySQL在以下操作场景下会使用索引：
 
 6) 对建立了索引的字段做sort或group操作时，MySQL会使用索引
 
-### 哪些SQL语句会真正利用索引
+### 1.3 哪些SQL语句会真正利用索引
 从MySQL官网文档"Comparison of B-Tree and Hash Indexes"可知，下面这些类型的SQL可能会真正用到索引：
 
 1) B-Tree可被用于sql中对列做比较的表达式，如=, >, >=, <, <=及between操作
@@ -47,7 +48,7 @@ MySQL在以下操作场景下会使用索引：
 
 5) 若sql语句中的where条件不只1个条件，则MySQL会进行Index Merge优化来缩小候选集范围
 
-## MySQL的联合索引什么情况下可以生效？
+## 2. MySQL的联合索引什么情况下可以生效？
 
 联合索引也就是我们说的组合索引
 
@@ -58,7 +59,7 @@ MySQL在以下操作场景下会使用索引：
 
 这个规则在oracle和mysql数据库中均成立。
 
-## 联合索引和单列索引有什么区别？
+## 3. 联合索引和单列索引有什么区别？
 
 为了形象地对比两者，建一个表：
 ```sql
@@ -78,6 +79,7 @@ PRIMARY KEY (i_testID)
 ```sql
 SELECT i_testID FROM myIndex WHERE vc_Name='erquan' AND vc_City='郑州' AND i_Age=25;
 ```
+<br>
 
 首先考虑建MySQL单列索引：
 
@@ -85,7 +87,7 @@ SELECT i_testID FROM myIndex WHERE vc_Name='erquan' AND vc_City='郑州' AND i_A
 
 虽然在 vc_Name 上建立了索引，查询时MYSQL不用扫描整张表，效率有所提高，但离我们的要求还有一定的距离。同样的，在vc_City和i_Age分别建立的MySQL单列索引的效率相似。
 
-**为了进一步榨取 MySQL的效率，就要考虑建立组合索引。**就是将vc_Name,vc_City，i_Age建到一个索引里：
+**为了进一步榨取 MySQL的效率，就要考虑建立组合索引**。就是将vc_Name,vc_City，i_Age建到一个索引里：
 
 ```sql
 ALTER TABLE myIndex ADD INDEX name_city_age (vc_Name(10),vc_City,i_Age);
@@ -99,12 +101,15 @@ ALTER TABLE myIndex ADD INDEX name_city_age (vc_Name(10),vc_City,i_Age);
 
 建立这样的组合索引，其实是相当于分别建立了(vc_Name,vc_City,i_Age)(vc_Name,_City ) ( vc_Name)
 
-这样的三个组合索引!为什么没有 vc_City，i_Age 等这样的组合索引呢？这是因为 mysql 组合索引**“最左前缀”**的结果。简单的理解就是只从最左面的开始组合。并不是只要包含这三列的查询都会用到该组合索引，下面的几个 T-SQL 会用到：
+这样的三个组合索引!为什么没有 vc_City，i_Age 等这样的组合索引呢？这是因为 mysql 组合索引“**最左前缀**”的结果。简单的理解就是只从最左面的开始组合。并不是只要包含这三列的查询都会用到该组合索引，下面的几个 T-SQL 会用到：
+
 ```sql
 SELECT * FROM myIndex WHREE vc_Name="erquan" AND vc_City="郑州"
 SELECT * FROM myIndex WHREE vc_Name="erquan"
-```　　
+```
+
 而下面几个则不会用到：
+
 ```sql
 SELECT * FROM myIndex WHREE i_Age=20 AND vc_City="郑州" 
 SELECT * FROM myIndex WHREE vc_City="郑州"
