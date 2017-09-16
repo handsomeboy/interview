@@ -66,7 +66,9 @@ SyncThread2:9
 ```
 
 当两个并发线程(thread1和thread2)访问**同一个对象**(syncThread)中的synchronized代码块时，在同一时刻只能有一个线程得到执行，另一个线程受阻塞，必须等待当前线程执行完这个代码块以后才能执行该代码块。Thread1和thread2是互斥的，因为在执行synchronized代码块时会锁定当前的对象，只有执行完该代码块才能释放该对象锁，下一个线程才能执行并锁定该对象。 
+
 我们再把SyncThread的调用稍微改一下：
+
 ```java
 Thread thread1 = new Thread(new SyncThread(), "SyncThread1");
 Thread thread2 = new Thread(new SyncThread(), "SyncThread2");
@@ -105,6 +107,7 @@ thread2.start();
 当一个线程访问对象的一个synchronized(this)同步代码块时，另一个线程仍然可以访问该对象中的非synchronized(this)同步代码块。 
 
 **【Demo2】**：多个线程访问synchronized和非synchronized代码块
+
 ```java
 
 class Counter implements Runnable {
@@ -147,6 +150,7 @@ class Counter implements Runnable {
 ``` 
 
 调用代码：
+
 ```java
 Counter counter = new Counter();
 Thread thread1 = new Thread(counter, "A");
@@ -176,7 +180,9 @@ A:4
 
 
 指定要给某个对象加锁
+
 **【Demo3】:**指定要给某个对象加锁
+
 ```java
 /**
  * 银行账户类
@@ -254,6 +260,7 @@ Thread0:10000.0
 
 在AccountOperator 类中的run方法里，我们用synchronized 给account对象加了锁。这时，当一个线程访问account对象时，其他试图访问account对象的线程将会阻塞，直到该线程访问account对象结束。也就是说谁拿到那个锁谁就可以运行它所控制的那段代码。 
 当有一个明确的对象作为锁时，就可以用类似下面这样的方式写程序。
+
 ```java
 public void method3(SomeObject obj)
 {
@@ -264,7 +271,9 @@ public void method3(SomeObject obj)
    }
 }
 ```
+
 当没有明确的对象作为锁，只是想让一段代码同步时，可以创建一个特殊的对象来充当锁：
+
 ```java
 class Test implements Runnable
 {
@@ -288,7 +297,8 @@ class Test implements Runnable
 
 Synchronized修饰一个方法很简单，就是在方法的前面加synchronized，public synchronized void method(){//todo}; synchronized修饰方法和修饰一个代码块类似，只是作用范围不一样，修饰代码块是大括号括起来的范围，而修饰方法范围是整个函数。如将【Demo1】中的run方法改成如下的方式，实现的效果一样。
 
-`【Demo4】`：synchronized修饰一个方法
+**【Demo4】**：synchronized修饰一个方法
+
 ```java
 public synchronized void run() {
    for (int i = 0; i < 5; i ++) {
@@ -319,14 +329,17 @@ public void method()
    }
 }
 ```
+
 写法一修饰的是一个方法，写法二修饰的是一个代码块，但写法一与写法二是等价的，都是锁定了整个方法时的内容。
 
 在用synchronized修饰方法时要注意以下几点： 
+
 **synchronized关键字不能继承。** 
 
 虽然可以使用synchronized来定义方法，但synchronized并不属于方法定义的一部分，因此，synchronized关键字不能被继承。如果在父类中的某个方法使用了synchronized关键字，而在子类中覆盖了这个方法，在子类中的这个方法默认情况下并不是同步的，**而必须显式地在子类的这个方法中加上synchronized关键字才可以**。当然，还可以在子类方法中调用父类中相应的方法，这样虽然子类中的方法不是同步的，但子类调用了父类的同步方法，因此，子类的方法也就相当于同步了。这两种方式的例子代码如下： 
 
 在子类方法中加上synchronized关键字
+
 ```java
 class Parent {
    public synchronized void method() { }
@@ -348,6 +361,7 @@ class Child extends Parent {
 构造方法不能使用synchronized关键字，但可以使用synchronized代码块来进行同步。 
 
 ## 修饰一个静态的方法
+
 Synchronized也可修饰一个静态方法，用法如下：
 ```java
 public synchronized static void method() {
@@ -423,7 +437,8 @@ class ClassName {
 }
 ```
 
-我们把Demo5再作一些修改。 
+我们把Demo5再作一些修改。
+ 
 **【Demo6】**:修饰一个类
 
 ```java

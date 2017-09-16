@@ -173,18 +173,21 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 <br><br><br><br>
 ## java高级篇 
 
-### java8
 
-### NIO
 
 ### JUC
 
-[什么是ConcurrentHashMap,与HashTable有什么区别？](https://github.com/zlnnjit/interview/blob/master/java/%E4%BB%80%E4%B9%88%E6%98%AFConcurrentHashMap%2C%E4%B8%8EHashTable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
++ [什么是ConcurrentHashMap,与HashTable有什么区别？](https://github.com/zlnnjit/interview/blob/master/java/%E4%BB%80%E4%B9%88%E6%98%AFConcurrentHashMap%2C%E4%B8%8EHashTable%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F.md)
 
 
++ [介绍一下Synchronized的用法](https://github.com/zlnnjit/interview/blob/master/java/%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8BSynchronized%E7%9A%84%E7%94%A8%E6%B3%95.md)
+
++ [介绍一下Lock的用法，并说明与Synchronized的区别]()
 
 
+### java8
 
+### NIO
 
 
 <br><br><br><br>
