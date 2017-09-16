@@ -1,6 +1,8 @@
-# java线程如何通信
+# java线程如何通信?
 
-## 同步
+
+
+## 1. 同步
 这里讲的同步是指多个线程通过synchronized关键字这种方式来实现线程间的通信。
 
 ```java
@@ -54,7 +56,7 @@ public class Run {
 
 <br><br>
 
-## while轮询的方式
+## 2. while轮询的方式
 代码如下：
 
 ```java
@@ -145,7 +147,7 @@ public class Test {
 在这种方式下，线程A不断地改变条件，线程ThreadB不停地通过while语句检测这个条件(list.size()==5)是否成立 ，从而实现了线程间的通信。`但是这种方式会浪费CPU资源`。之所以说它浪费资源，是因为JVM调度器将CPU交给线程B执行时，它没做啥“有用”的工作，只是在不断地测试 某个条件是否成立。就类似于现实生活中，某个人一直看着手机屏幕是否有电话来了，而不是： 在干别的事情，当有电话来时，响铃通知TA电话来了。关于线程的轮询的影响，
 
 <br><br>
-## wait/notify机制
+## 3. wait/notify机制
 代码如下：
 ```java
 import java.util.ArrayList;
@@ -256,7 +258,7 @@ A,B之间如何通信的呢？也就是说，线程A如何知道 list.size() 已
 
 <br><br>
 
-## Condition实现线程通信
+## 4. Condition实现线程通信
 Condition 接口描述了可能会与锁有关联的条件变量。这些变量在用法上与使用 Object.wait 访问的隐式监视器类似，但提供了更强大的功能。需要特别指出的是，单个 Lock 可能与多个 Condition 对象关联。为了避免兼容性问题，Condition 方法的名称与对应的 Object 版本中的不同。
 
 在 Condition 对象中，与 wait、notify 和notifyAll 方法对应的分别是await、signal和signalAll。
