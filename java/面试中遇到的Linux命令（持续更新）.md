@@ -71,9 +71,9 @@ root@odl:/home/zln# ps -u root
     9 ?        00:00:09 rcuos/1
 ```
 
-实例3：显示所有进程信息，连同命令行
-命令：
-ps -ef
+实例3：显示所有进程信息，连同命令行 
+命令： 
+ps -ef 
 ```
 root@odl:/home/zln# ps -ef
 root      5304     2  0 12:51 ?        00:00:00 [kworker/0:0]
@@ -88,9 +88,9 @@ root      5525  5524  0 13:07 pts/0    00:00:00 bash
 root      5554  5525  0 13:12 pts/0    00:00:00 ps -ef
 ```
 
-实例4： ps 与grep 常用组合用法，查找特定进程
-命令：
-ps -ef|grep ssh
+实例4： ps 与grep 常用组合用法，查找特定进程 
+命令： 
+ps -ef|grep ssh 
 ```
 root@odl:/home/zln# ps -ef|grep ssh
 zln       2062  1995  0 10:57 ?        00:00:00 ssh-agent
@@ -98,8 +98,8 @@ root      5563  5525  0 13:14 pts/0    00:00:00 grep --color=auto ssh
 ```
 
 实例5：将目前属于您自己这次登入的 PID 与相关信息列示出来
-命令：
-ps -l
+命令： 
+ps -l 
 
 ```
 root@odl:/home/zln# ps -l
@@ -110,9 +110,9 @@ F S   UID   PID  PPID  C PRI  NI ADDR SZ WCHAN  TTY          TIME CMD
 0 R     0  5564  5525  0  80   0 -  3553 -      pts/0    00:00:00 ps
 ```
 
-实例6：列出目前所有的正在内存当中的程序
-命令：
-ps aux
+实例6：列出目前所有的正在内存当中的程序 
+命令： 
+ps aux 
 ```
 root@odl:/home/zln# ps auf
 USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
