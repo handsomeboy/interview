@@ -1,7 +1,7 @@
-# HashMap的数据结构是什么？如何实现的
+# HashMap的数据结构是什么？如何实现的?
 
 
-## HashMap的数据结构
+## 1.HashMap的数据结构
 
 数据结构中有**数组和链表**来实现对数据的存储，但这两者基本上是两个极端。
 
@@ -26,18 +26,22 @@
 ![HashMap的数据结构是什么？如何实现的](http://www.bcoder.top/img/interview/5.jpg)
 
 从上图我们可以发现哈希表是由数组+链表组成的，一个**长度为16的数组**中，每个元素存储的是一个链表的头结点。
+
 那么这些元素是按照什么样的规则存储到数组中呢？
+
 一般情况是通过**hash(key)%len**获得，也就是元素的key的哈希值对数组长度取模得到。
+
 比如上述哈希表中，12%16=12,28%16=12,108%16=12,140%16=12。所以12、28、108以及140都存储在数组下标为12的位置。
 
 <br><br>
-## 哈希冲突
+## 2. 哈希冲突
 
 然而万事无完美，如果两个不同的元素，通过哈希函数得出的实际存储地址相同怎么办？也就是说，当我们对某个元素进行哈希运算，得到一个存储地址，然后要进行插入的时候，发现已经被其他元素占用了，其实这就是所谓的哈希冲突，也叫哈希碰撞。
 
 前面我们提到过，哈希函数的设计至关重要，好的哈希函数会尽可能地保证 计算简单和散列地址分布均匀,但是，我们需要清楚的是，数组是一块连续的固定长度的内存空间，再好的哈希函数也不能保证得到的存储地址绝对不发生冲突。
 
 那么哈希冲突如何解决呢？哈希冲突的解决方案有多种:
+
 +　开放定址法（发生冲突，继续寻找下一块未被占用的存储地址）
 +　再散列函数法
 +　链地址法
@@ -45,11 +49,13 @@
 而HashMap即是采用了**链地址法**，也就是数组+链表的方式
 
 <br><br>
-## HashMap的实现
+## 3. HashMap的实现
 
 　HashMap的主干是一个Entry数组。Entry是HashMap的基本组成单元，每一个Entry包含一个key-value键值对。
 ```java
-//HashMap的主干数组，可以看到就是一个Entry数组，初始值为空数组{}，主干数组的长度一定是2的次幂，至于为什么这么做，后面会有详细分析。
+//HashMap的主干数组，可以看到就是一个Entry数组，
+//初始值为空数组{}，主干数组的长度一定是2的次幂，
+//至于为什么这么做，后面会有详细分析。
 transient Entry<K,V>[] table = (Entry<K,V>[]) EMPTY_TABLE;
 ```
 
@@ -75,19 +81,25 @@ static class Entry<K,V> implements Map.Entry<K,V> {
 
  所以，HashMap的整体结构如下:
  
- ![HashMap的数据结构是什么？如何实现的](http://www.bcoder.top/img/interview/6.png
+ ![HashMap的数据结构是什么？如何实现的](http://www.bcoder.top/img/interview/6.png)
  
-简单来说，HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的，如果定位到的数组位置不含链表（当前entry的next指向null）,那么对于查找，添加等操作很快，仅需一次寻址即可；如果定位到的数组包含链表，对于添加操作，其时间复杂度依然为O(1)，因为最新的Entry会插入链表头部，急需要简单改变引用链即可，而对于查找操作来讲，此时就需要遍历链表，然后通过key对象的equals方法逐一比对查找。所以，**性能考虑，HashMap中的链表出现越少，性能才会越好。**
+简单来说，HashMap由数组+链表组成的，数组是HashMap的主体，链表则是主要为了解决哈希冲突而存在的，如果定位到的数组位置不含链表（当前entry的next指向null）,那么对于查找，添加等操作很快，仅需一次寻址即可；
+
+如果定位到的数组包含链表，对于添加操作，其时间复杂度依然为O(1)，因为最新的Entry会插入链表头部，急需要简单改变引用链即可，而对于查找操作来讲，此时就需要遍历链表，然后通过key对象的equals方法逐一比对查找。所以，**性能考虑，HashMap中的链表出现越少，性能才会越好。**
 
 下面我们来看看其他几个重要的字段
+
 ```java
 //实际存储的key-value键值对的个数
 transient int size;
-//阈值，当table == {}时，该值为初始容量（初始容量默认为16）；当table被填充了，也就是为table分配内存空间后，threshold一般为 capacity*loadFactory。HashMap在进行扩容时需要参考threshold，后面会详细谈到
+//阈值，当table =={}时，该值为初始容量（初始容量默认为16）；
+//当table被填充了，也就是为table分配内存空间后，threshold一般为 capacity*loadFactory。
+//HashMap在进行扩容时需要参考threshold，后面会详细谈到
 int threshold;
 //负载因子，代表了table的填充度有多少，默认是0.75
 final float loadFactor;
-//用于快速失败，由于HashMap非线程安全，在对HashMap进行迭代时，如果期间其他线程的参与导致HashMap的结构发生变化了（比如put，remove等操作），需要抛出异常ConcurrentModificationException
+//用于快速失败，由于HashMap非线程安全，在对HashMap进行迭代时，
+//如果期间其他线程的参与导致HashMap的结构发生变化了（比如put，remove等操作），需要抛出异常ConcurrentModificationException
 transient int modCount;
 ```
 
@@ -158,7 +170,8 @@ private void inflateTable(int toSize) {
     }
 ```
 
-inflateTable这个方法用于为主干数组table在内存中分配存储空间，通过roundUpToPowerOf2(toSize)可以确保capacity为大于或等于toSize的最接近toSize的二次幂，比如toSize=13,则capacity=16;to_size=16,capacity=16;to_size=17,capacity=32.
+inflateTable这个方法用于为主干数组table在内存中分配存储空间，通过roundUpToPowerOf2(toSize)可以确保capacity为大于或等于toSize的最接近toSize的二次幂，
+比如toSize=13,则capacity=16;to_size=16,capacity=16;to_size=17,capacity=32.
 
 
 ```java
@@ -216,6 +229,7 @@ void addEntry(int hash, K key, V value, int bucketIndex) {
     }
 ```
 　　
+
 通过以上代码能够得知，当发生哈希冲突并且size大于阈值的时候，需要进行数组扩容，扩容时，需要新建一个长度为之前数组2倍的新的数组，然后将当前的Entry数组中的元素全部传输过去，扩容后的新数组长度为之前的2倍，所以扩容相对来说是个耗资源的操作。
 
 那么，为何HashMap的数组长度一定是2的次幂？
@@ -258,7 +272,7 @@ void transfer(Entry[] newTable, boolean rehash) {
     }
 ```
 　　
-这个方法将老数组中的数据逐个链表地遍历，扔到新的扩容后的数组中，我们的数组索引位置的计算是通过 对key值的hashcode进行hash扰乱运算后，再通过和 length-1进行位运算得到最终数组索引位置。
+这个方法将老数组中的数据逐个链表地遍历，扔到新的扩容后的数组中，我们的数组索引位置的计算是通过对key值的hashcode进行hash扰乱运算后，再通过和length-1进行位运算得到最终数组索引位置。
 
 
 hashMap的数组长度一定保持2的次幂，比如16的二进制表示为 10000，那么length-1就是15，二进制为01111，同理扩容后的数组长度为32，二进制表示为100000，length-1为31，二进制表示为011111。从下图可以我们也能看到这样会保证低位全为1，而扩容后只有一位差异，也就是多出了最左位的1，这样在通过 h&(length-1)的时候，只要h对应的最左边的那一个差异位为0，就能保证得到的新的数组索引和老数组索引一致(大大减少了之前已经散列良好的老数组的数据位置重新调换)。
@@ -269,11 +283,11 @@ hashMap的数组长度一定保持2的次幂，比如16的二进制表示为 100
 
 ![HashMap的数据结构是什么？如何实现的](http://www.bcoder.top/img/interview/8.png)
 
-　　我们看到，上面的&运算，高位是不会对结果产生影响的（hash函数采用各种位运算可能也是为了使得低位更加散列），我们只关注低位bit，如果低位全部为1，那么对于h低位部分来说，任何一位的变化都会对结果产生影响，也就是说，要得到index=21这个存储位置，h的低位只有这一种组合。这也是数组长度设计为必须为2的次幂的原因。
+我们看到，上面的&运算，高位是不会对结果产生影响的（hash函数采用各种位运算可能也是为了使得低位更加散列），我们只关注低位bit，如果低位全部为1，那么对于h低位部分来说，任何一位的变化都会对结果产生影响，也就是说，要得到index=21这个存储位置，h的低位只有这一种组合。这也是数组长度设计为必须为2的次幂的原因。
 
 ![HashMap的数据结构是什么？如何实现的](http://www.bcoder.top/img/interview/9.png)
 
-　　如果不是2的次幂，也就是低位不是全为1此时，要使得index=21，h的低位部分不再具有唯一性了，哈希冲突的几率会变的更大，同时，index对应的这个bit位无论如何不会等于1了，而对应的那些数组位置也就被白白浪费了。
+如果不是2的次幂，也就是低位不是全为1此时，要使得index=21，h的低位部分不再具有唯一性了，哈希冲突的几率会变的更大，同时，index对应的这个bit位无论如何不会等于1了，而对应的那些数组位置也就被白白浪费了。
 
 get方法
 
@@ -308,7 +322,8 @@ final Entry<K,V> getEntry(Object key) {
         return null;
     }    
 ```
-　　可以看出，get方法的实现相对简单，key(hashcode)-->hash-->indexFor-->最终索引位置，找到对应位置table[i]，再查看是否有链表，遍历链表，通过key的equals方法比对查找对应的记录。要注意的是，有人觉得上面在定位到数组位置之后然后遍历链表的时候，e.hash == hash这个判断没必要，仅通过equals判断就可以。其实不然，试想一下，如果传入的key对象重写了equals方法却没有重写hashCode，而恰巧此对象定位到这个数组位置，如果仅仅用equals判断可能是相等的，但其hashCode和当前对象不一致，这种情况，根据Object的hashCode的约定，不能返回当前对象，而应该返回null，后面的例子会做出进一步解释。
+
+可以看出，get方法的实现相对简单，key(hashcode)-->hash-->indexFor-->最终索引位置，找到对应位置table[i]，再查看是否有链表，遍历链表，通过key的equals方法比对查找对应的记录。要注意的是，有人觉得上面在定位到数组位置之后然后遍历链表的时候，e.hash == hash这个判断没必要，仅通过equals判断就可以。其实不然，试想一下，如果传入的key对象重写了equals方法却没有重写hashCode，而恰巧此对象定位到这个数组位置，如果仅仅用equals判断可能是相等的，但其hashCode和当前对象不一致，这种情况，根据Object的hashCode的约定，不能返回当前对象，而应该返回null。
 
 
 
