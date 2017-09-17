@@ -1,13 +1,15 @@
 # Cookie和Session的区别？
 
-## Cookie和Session概述
+
+
+## 1. Cookie和Session概述
 先来一张图看一下cookie和session:
 
 ![Cookie和Session的区别](http://www.bcoder.top/img/interview/17.png)
 
 <br><br>
-## Cookie
-**什么是Cookie?**
+## 2. Cookie
+### 2.1. 什么是Cookie?
 Cookie意为“甜饼”，是由W3C组织提出，最早由Netscape社区发展的一种机制。目前Cookie已经成为标准，所有的主流浏览器如IE、Netscape、Firefox、Opera等都支持Cookie。
 
 
@@ -18,7 +20,7 @@ Cookie实际上是一小段的文本信息。客户端请求服务器，如果�
 ![Cookie和Session的区别](http://www.bcoder.top/img/interview/18.jpg)
 <br>
 
-**cookie具体内容是什么？**
+### 2.2. cookie具体内容是什么？
 
 ```
 BIDUPSID: 9D2194F1CB8D1E56272947F6B0E5D47E
@@ -40,7 +42,7 @@ bdime: 0
 
 <br>
 
-**java中cookie的方法**
+### 2.3. java中cookie的方法
 
 ```java
 Cookie cookie = new Cookie("username","helloweenvsfei"); // 新建Cookie
@@ -51,7 +53,7 @@ response.addCookie(cookie); // 输出到客户端
 ```
 <br>
 
-**Cookie有哪些好处？**
+### 2.4. Cookie有哪些好处？
 
 1、Cookie能使站点跟踪特定访问者的访问次数、最后访问时间和访问者进入站点的路径 
 
@@ -62,7 +64,7 @@ response.addCookie(cookie); // 输出到客户端
 4、Cookie能帮助站点统计用户个人资料以实现各种各样的个性化服务 
 <br>
 
-**cookie有哪些限制？**
+### 2.5. cookie有哪些限制？
 
 1、必须在HTML文件的内容输出之前设置；
 
@@ -73,9 +75,9 @@ response.addCookie(cookie); // 输出到客户端
 
 <br><br>
 
-## Session
+## 3. Session
 
-**什么是Session**
+### 3.1. 什么是Session
 
 Session是另一种记录客户状态的机制，不同的是Cookie保存在客户端浏览器中，而Session **保存在服务器上**。客户端浏览器访问服务器的时候，服务器把客户端信息以某种形式记录在服务器上。这就是Session。客户端浏览器再次访问时只需要从该Session中查找该客户的状态就可以了。
 如果说Cookie机制是通过检查客户身上的“通行证”来确定客户身份的话，那么Session机制就是通过检查服务器上的“客户明细表”来确认客户身份。Session相当于程序在服务器上建立的一份客户档案，客户来访的时候只需要查询客户档案表就可以了。
@@ -84,7 +86,7 @@ Session是另一种记录客户状态的机制，不同的是Cookie保存在客�
 
 <br>
 
-**java中session有哪些方法？**
+### 3.2. java中session有哪些方法？
 
 void setAttribute(String attribute, Object value)：
 设置Session属性。value参数可以为任何Java Object。通常为JavaBean。value信息不宜过大 
@@ -110,7 +112,7 @@ void invalidate()：使该Session失效
 
 <br>
 
-**Session有什么优点？**
+### 3.3. Session有什么优点？
 
 1.如果要在诸多Web页间传递一个变量，那么用Session变量要比通过QueryString传递变量可使问题简化。
 
@@ -120,7 +122,7 @@ Server等的使用，已不必再将所有用户化过程置入Session变量了�
 3.你可以在任何想要使用的时候直接使用session变量，而不必事先声明它，这种方式接近于在VB中变量的使用。使用完毕后，也不必考虑将其释放，因为它将自动释放。 
 
 
-**Session有什么缺点？**
+### 3.4. Session有什么缺点？
 
 1.Session变量和cookies是同一类型的。如果某用户将浏览器设置为不兼容任何cookie，那么该用户就无法使用这个Session变量！ 
 
@@ -131,7 +133,7 @@ recordsets，connections， 等等），那就有麻烦了！随着站点访问�
 
 
 <br><br>
-## Cookie和Session区别
+## 4. Cookie和Session区别
 
 
 1、cookie数据存放在客户的浏览器上，session数据放在服务器上。

@@ -1,8 +1,7 @@
-# Servlet处理请求的流程，有哪些方法？
+# servlet处理请求的流程，有哪些方法？
 
 
-
-## servlet请求过程
+## 1. servlet请求过程
 
 首先，我们先看一下简单的图解：
 
@@ -48,7 +47,7 @@ A、servlet引擎读取配置文件web.xml，获取到该servlet的信息，封�
 
 B、 利用反射技术创建出servlet对象，**并调用init方法**   
    
- 8.servlet引擎将客户端请求封装到request对象中,并创建一个响应头和响应体都为空的响应对象response。**servlet引擎将这两个对象作为参数传递给service**（HttpServletRequest request,HttpServletResponse response）方法.每一个客户端请求访问一次servlet程序， servlet引擎就创建一个对应的request对象和response对象。response对象用于存放servlet程序针对客户端请求产生的数据（响应），以及服务器端控制浏览器显示的响应头 
+8.servlet引擎将客户端请求封装到request对象中,并创建一个响应头和响应体都为空的响应对象response。**servlet引擎将这两个对象作为参数传递给service**（HttpServletRequest request,HttpServletResponse response）方法.每一个客户端请求访问一次servlet程序， servlet引擎就创建一个对应的request对象和response对象。response对象用于存放servlet程序针对客户端请求产生的数据（响应），以及服务器端控制浏览器显示的响应头 
  
 9.调用业务逻辑service方法对请求进行处理，将response响应返回到服务器程序中。 
 
@@ -58,14 +57,15 @@ B、 利用反射技术创建出servlet对象，**并调用init方法**
 
 12.客户端浏览器显示服务器程序发送的http响应信息.
 
-## Servlet重要的方法
+## 2. Servlet重要的方法
 
 **(1) init() 方法**
 
 在 Servlet 的生命期中，仅执行一次 init() 方法。它是在服务器装入 Servlet时执行的。可以配置服务器，以在启动服务器或客户机首次访问 Servlet 时装入 Servlet。 无论有多少客户机访问 Servlet，都不会重复执行 init() 。
 
 缺省的 init() 方法通常是符合要求的，但也可以用定制 init() 方法来覆盖它，典型的是管理服务器端资源。例如，可能编写一个定制 init() 来只用于一次装入 GIF 图像，改进 Servlet 返回 GIF图像和含有多个客户机请求的性能。另一个示例是初始化数据库连接。缺省的 init() 方法设置了 Servlet 的初始化参数，并用它的 ServletConfig 对象参数来启动配置， 因此**所有覆盖 init() 方法的 Servlet 应调用 super.init() 以确保仍然执行这些任务。**在调用 service() 方法之前，应确保已完成了 init() 方法。
-　　
+
+
 **(2) service() 方法**
 
 service() 方法是 Servlet 的核心。每当一个客户请求一个HttpServlet 对象，该对象的service() 方法就要被调用，而且传递给这个方法一个"请求"(ServletRequest)对象和一个"响应"(ServletResponse)对象作为参数。在 HttpServlet 中已存在 service() 方法。缺省的服务功能是调用与 HTTP 请求的方法相应的 do 功能。例如，如果 HTTP 请求方法为 GET，则缺省情况下就调用 doGet() 。Servlet 应该为 Servlet 支持的 HTTP 方法覆盖 do 功能。因为 HttpServlet.service() 方法会检查请求方法是否调用了适当的处理方法，不必要覆盖 service() 方法。只需覆盖相应的 do 方法就可以了。
