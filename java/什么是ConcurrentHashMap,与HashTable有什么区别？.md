@@ -5,7 +5,8 @@ ConcurrentHashMap是在Java 1.5作为Hashtable的替代选择新引入的，是c
 
 ConcurrentHashMap不但是线程安全的，而且比HashTable和synchronizedMap的性能要好。相对于HashTable和synchronizedMap锁住了整个Map，ConcurrentHashMap只锁住部分Map。ConcurrentHashMap允许并发的读操作，同时通过同步锁在写操作时保持数据完整性。
 <br>
-## Java中ConcurrentHashMap如何实现？
+
+## 1. Java中ConcurrentHashMap如何实现？
 
 ConcurrentHashMap引入了分割，并提供了HashTable支持的所有的功能。
 
@@ -38,7 +39,8 @@ synchronized(map){
 上面这段代码在HashMap和HashTable中是好用的，但在ConcurrentHashMap中是有出错的风险的。这是因为ConcurrentHashMap在put操作时并没有对整个Map加锁，所以一个线程正在put(k,v)的时候，另一个线程调用get(k)会得到null，这就会造成一个线程put的值会被另一个线程put的值所覆盖。当然，你可以将代码封装到synchronized代码块中，这样虽然线程安全了，但会使你的代码变成了单线程。ConcurrentHashMap提供的putIfAbsent(key,value)方法原子性的实现了同样的功能，同时避免了上面的线程竞争的风险。
 
 <br>
-## 为什么我们需要ConcurrentHashMap和CopyOnWriteArrayList？
+
+## 2. 为什么我们需要ConcurrentHashMap和CopyOnWriteArrayList？
 
 同步的集合类（Hashtable和Vector），同步的封装类（使用Collections.synchronizedMap()方法和Collections.synchronizedList()方法返回的对象）可以创建出线程安全的Map和List。但是有些因素使得它们不适合高并发的系统。它们仅有单个锁，对整个集合加锁，以及为了防止ConcurrentModificationException异常经常要在迭代的时候要将集合锁定一段时间，这些特性对可扩展性来说都是障碍。
 
@@ -46,7 +48,7 @@ ConcurrentHashMap和CopyOnWriteArrayList保留了线程安全的同时，也提�
 
 <br>
 
-## 什么时候使用ConcurrentHashMap?
+## 3. 什么时候使用ConcurrentHashMap?
 
 ConcurrentHashMap适用于读者数量超过写者时，当写者数量大于等于读者时，ConcurrentHashMap的性能是低于Hashtable和synchronized Map的。这是因为当锁住了整个Map时，读操作要等待对同一部分执行写操作的线程结束。ConcurrentHashMap适用于做cache,在程序启动时初始化，之后可以被多个请求线程访问。正如Javadoc说明的那样，ConcurrentHashMap是HashTable一个很好的替代，但要记住，ConcurrentHashMap的比HashTable的同步性稍弱。
 
@@ -57,7 +59,8 @@ ConcurrentHashMap适用于读者数量超过写者时，当写者数量大于等
 ConcurrentHashMap和CopyOnWriteArrayList保留了线程安全的同时，也提供了更高的并发性。ConcurrentHashMap和CopyOnWriteArrayList并不是处处都需要用，大部分时候你只需要用到HashMap和ArrayList，它们用于应对一些普通的情况。
 
 <br>
-## HashTable与ConcurrentHashMap的对比
+
+## 4. HashTable与ConcurrentHashMap的对比
 HashTable本身是线程安全的，写过Java程序的都知道通过加Synchronized关键字实现线程安全，这样对整张表加锁实现同步的一个缺陷就在于使程序的效率变得很低。这就是为什么Java中会在1.5后引入ConcurrentHashMap的原因。
 
 ![什么是ConcurrentHashMap,与HashTable有什么区别？](http://www.bcoder.top/img/interview/10.jpg)
@@ -66,7 +69,7 @@ HashTable本身是线程安全的，写过Java程序的都知道通过加Synchro
 
 
 
-## ConcurrentHashMap在jdk 1.6中的实现
+## 5. ConcurrentHashMap在jdk 1.6中的实现
 ConcurrentHashMap采用**分段锁的机制**，实现并发的更新操作，底层采用**数组+链表+红黑树**的存储结构。
 
 ConcurrentHashMap主要有三大结构：**整个Hash表，segment（段），HashEntry（节点）。每个segment就相当于一个HashTable。**
@@ -139,6 +142,7 @@ static final class Segment<K,V> extends ReentrantLock implements Serializable {
  }
 ```
 <br>
+
 **ConcurrentHashMap 类**
 
 默认的情况下，每个ConcurrentHashMap 类会创建16个并发的segment，每个segment里面包含多个Hash表，每个Hash链都是有HashEntry节点组成的。
@@ -163,10 +167,11 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V>
      final Segment<K,V>[] segments;  
  }
 ```
-jdk 1.8的实现已经抛弃了Segment分段锁机制，利用CAS+Synchronized来保证并发更新的安全，底层依然采用数组+链表+红黑树的存储结构。
+
+**jdk 1.8的实现已经抛弃了Segment分段锁机制，利用CAS+Synchronized来保证并发更新的安全，底层依然采用数组+链表+红黑树的存储结构**。
 
 
-## 总结
+## 6. 总结
 ，下面我们来复习一下ConcurrentHashMap的一些关键点。
 
 + ConcurrentHashMap允许并发的读和线程安全的更新操作
