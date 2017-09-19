@@ -231,6 +231,8 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [统计数组中各个元素出现的次数](https://github.com/zlnnjit/interview/blob/master/%E7%BC%96%E7%A8%8B%E9%A2%98/%E7%BB%9F%E8%AE%A1%E6%95%B0%E7%BB%84%E4%B8%AD%E5%90%84%E4%B8%AA%E5%85%83%E7%B4%A0%E5%87%BA%E7%8E%B0%E7%9A%84%E6%AC%A1%E6%95%B0.md)
 
++ [设计一个有getMin功能的栈](https://github.com/zlnnjit/interview/blob/master/%E7%BC%96%E7%A8%8B%E9%A2%98/%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E6%9C%89getMin%E5%8A%9F%E8%83%BD%E7%9A%84%E6%A0%88.md)
+
 
 
 
