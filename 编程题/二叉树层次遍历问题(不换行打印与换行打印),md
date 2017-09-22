@@ -1,0 +1,141 @@
+# 二叉树层次遍历问题(不换行打印与换行打印)
+
+
+## 【题目1】
+
+
+![二叉树层次遍历问题](http://www.bcoder.top/img/interview/47.png)
+
+
+## 【代码实现】
+
+```java
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TreeTest1 {
+
+    private static TreeNode<Integer> node1;
+    private static TreeNode<Integer> node2;
+    private static TreeNode<Integer> node3;
+    private static TreeNode<Integer> node4;
+    private static TreeNode<Integer> node5;
+    private static TreeNode<Integer> node6;
+    private static TreeNode<Integer> node7;
+    private static TreeNode<Integer> node8;
+
+    static {
+        node8 = new TreeNode<>(null, null, 8);
+        node7 = new TreeNode<>(null, null, 7);
+        node6 = new TreeNode<>(null, null, 6);
+        node4 = new TreeNode<>(null, null, 4);
+        node5 = new TreeNode<>(node7, node8, 5);
+        node3 = new TreeNode<>(node5, node6, 3);
+        node2 = new TreeNode<>(node4, null, 2);
+        node1 = new TreeNode<>(node2, node3, 1);
+    }
+
+
+    public static void main(String[] args) {
+        Queue<TreeNode<Integer>> queue = new LinkedList<>();
+        queue.offer(node1);
+        while (!queue.isEmpty()){
+            TreeNode<Integer> node = queue.poll();
+            System.out.print(node.getValue()+"\t");
+            if (node.getLeft()!=null)
+            {
+                queue.offer(node.getLeft());
+            }
+            if (node.getRight()!=null){
+                queue.offer(node.getRight());
+            }
+        }
+
+    }
+}
+
+```
+
+运行结果：
+
+```
+1	2	3	4	5	6	7	8	
+```
+
+
+## 【题目二】
+
+![二叉树层次遍历问题](http://www.bcoder.top/img/interview/48.png)
+
+
+## 【代码实现】
+
+```java
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * 二叉树层次遍历（换行）
+ */
+public class TreeTest2 {
+
+    private static TreeNode<Integer> node1;
+    private static TreeNode<Integer> node2;
+    private static TreeNode<Integer> node3;
+    private static TreeNode<Integer> node4;
+    private static TreeNode<Integer> node5;
+    private static TreeNode<Integer> node6;
+    private static TreeNode<Integer> node7;
+    private static TreeNode<Integer> node8;
+
+    static {
+        node8 = new TreeNode<>(null, null, 8);
+        node7 = new TreeNode<>(null, null, 7);
+        node6 = new TreeNode<>(null, null, 6);
+        node4 = new TreeNode<>(null, null, 4);
+        node5 = new TreeNode<>(node7, node8, 5);
+        node3 = new TreeNode<>(node5, node6, 3);
+        node2 = new TreeNode<>(node4, null, 2);
+        node1 = new TreeNode<>(node2, node3, 1);
+    }
+
+
+    public static void main(String[] args) {
+        Queue<TreeNode<Integer>> queue = new LinkedList<>();
+        int count = 0;
+
+
+        //last:表示正在打印的当前行的最右节点
+        TreeNode<Integer> last = null;
+
+        //nlast:表示下一行的最右节点
+        TreeNode<Integer> nlast = null;
+
+        queue.offer(node1);
+        last = node1;
+
+        while (!queue.isEmpty()){
+            TreeNode<Integer> node = queue.poll();
+
+            System.out.print(node.getValue()+"\t");
+            if (node.getLeft()!=null)
+            {
+                queue.offer(node.getLeft());
+                nlast = node.getLeft();
+            }
+            if (node.getRight()!=null){
+                queue.offer(node.getRight());
+                nlast = node.getRight();
+            }
+            if (last == node){
+                System.out.println();
+                last = nlast;
+            }
+        }
+
+    }
+}
+```
+
+
