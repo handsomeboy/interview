@@ -3,6 +3,7 @@
 
 ## 【题目1】
 
+题目如下图所示：
 
 ![二叉树层次遍历问题](http://www.bcoder.top/img/interview/47.png)
 
@@ -64,6 +65,8 @@ public class TreeTest1 {
 
 
 ## 【题目二】
+
+题目如下图所示：
 
 ![二叉树层次遍历问题](http://www.bcoder.top/img/interview/48.png)
 
