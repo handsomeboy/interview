@@ -216,7 +216,9 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [对几乎已经排好序的数组进行排序](https://github.com/zlnnjit/interview/blob/master/%E7%BC%96%E7%A8%8B%E9%A2%98/%E5%AF%B9%E5%87%A0%E4%B9%8E%E5%B7%B2%E7%BB%8F%E6%8E%92%E5%A5%BD%E5%BA%8F%E7%9A%84%E6%95%B0%E7%BB%84%E8%BF%9B%E8%A1%8C%E6%8E%92%E5%BA%8F.md)
 
-+ [判断数组中是否有重复值。必须保证额外空间复杂度为O(1)]()
++ [判断数组中是否有重复值。必须保证额外空间复杂度为O(1)](https://github.com/zlnnjit/interview/blob/master/%E7%BC%96%E7%A8%8B%E9%A2%98/%E5%88%A4%E6%96%AD%E6%95%B0%E7%BB%84%E4%B8%AD%E6%98%AF%E5%90%A6%E6%9C%89%E9%87%8D%E5%A4%8D%E5%80%BC%E3%80%82%E5%BF%85%E9%A1%BB%E4%BF%9D%E8%AF%81%E9%A2%9D%E5%A4%96%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E4%B8%BAO(1).md)
+
++ [把两个有序数组合并成一个数组，第一个数组空间正好可以容纳两个数组的元素]()
 
 ## 工具篇
 
