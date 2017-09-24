@@ -228,9 +228,9 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [判断一颗二叉树是否是二叉树的子树](https://github.com/zlnnjit/interview/blob/master/编程题/判断一颗二叉树是否是二叉树的子树.md)
 
-+ [判断字符串是否互为变形词]()
++ [判断字符串是否互为变形词](https://github.com/zlnnjit/interview/blob/master/%E7%BC%96%E7%A8%8B%E9%A2%98/%E5%88%A4%E6%96%AD%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%98%AF%E5%90%A6%E4%BA%92%E4%B8%BA%E5%8F%98%E5%BD%A2%E8%AF%8D.md)
 
-
++ [判断字符串是否互为旋转词]()
 
 <br><br><br><br>
 
