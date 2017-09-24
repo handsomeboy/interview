@@ -226,9 +226,9 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [求需要排序的最短子数组长度](https://github.com/zlnnjit/interview/blob/master/%E7%BC%96%E7%A8%8B%E9%A2%98/%E6%B1%82%E9%9C%80%E8%A6%81%E6%8E%92%E5%BA%8F%E7%9A%84%E6%9C%80%E7%9F%AD%E5%AD%90%E6%95%B0%E7%BB%84%E9%95%BF%E5%BA%A6.md)
 
-+ [判断一颗二叉树是否是二叉树的子树]()
++ [判断一颗二叉树是否是二叉树的子树](https://github.com/zlnnjit/interview/blob/master/编程题/判断一颗二叉树是否是二叉树的子树.md)
 
-
++ [判断字符串是否互为变形词]()
 
 
 
