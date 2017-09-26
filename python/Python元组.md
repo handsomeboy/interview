@@ -6,7 +6,7 @@
 111
 
 
-![Python元组](https://github.com/zlnnjit/interview/blob/master/img/1.png)
+![Python元组](https://raw.githubusercontent.com/zlnnjit/interview/master/img/1.png)
 
 
 
