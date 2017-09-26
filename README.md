@@ -23,6 +23,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 ### java基础
 
++ [说说Java接口和抽象类的区别]()
 
 + [equals()和hashCode()总结](https://github.com/zlnnjit/interview/blob/master/java/equals()%E5%92%8ChashCode()%E6%80%BB%E7%BB%93.md)
 
