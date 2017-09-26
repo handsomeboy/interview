@@ -32,7 +32,6 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 + [java代码的执行顺序](http://www.bcoder.top/2017/05/25/java%E4%BB%A3%E7%A0%81%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F/)
 
 
-+ [Python元组](https://github.com/zlnnjit/interview/blob/master/python/Python%E5%85%83%E7%BB%84.md)
 
 + [JAVA中Stack和Heap的区别](http://www.bcoder.top/2017/05/25/JAVA%E4%B8%ADStack%E5%92%8CHeap%E7%9A%84%E5%8C%BA%E5%88%AB/)
 
