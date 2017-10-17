@@ -187,6 +187,96 @@ JVM将类加载过程分为三个步骤：装载（Load），链接（Link）和
 
 3)加入类中存在初始化语句（如static变量和static块），那就依次执行这些初始化语句。
 
+
+<br>
+
+**类的初始化衍生出的面试题**
+```java
+public class Fa {
+
+    public static Integer i = -1;
+    private  int j=-1;
+
+
+    static {
+        if (i==-1){
+            System.out.println("父类静态变量");
+        }
+        System.out.println("父类静态代码块");
+    }
+
+    {
+        if (j==-1){
+            System.out.println("父类普通变量");
+        }
+        System.out.println("父类代码块");
+    }
+
+    public Fa(){
+        System.out.println("父类构造方法");
+    }
+}
+public class De extends Fa {
+
+    public static Integer m = -1;
+    public static Integer n = -1;
+
+    static {
+
+        if (m == -1) {
+            System.out.println("子类静态变量");
+        }
+        System.out.println("子类静态代码块");
+    }
+
+    {
+        if (n==-1){
+            System.out.println("子类普通变量");
+        }
+        System.out.println("子类代码块");
+    }
+
+
+    public De() {
+        System.out.println("子类构造方法");
+    }
+
+
+    public static void main(String[] args) {
+        De d1 = new De();
+        System.out.println("=====================================");
+        De d2 = new De();
+        System.out.println("=====================================");
+        Fa f1 = new Fa();
+    }
+}
+```
+
+运行结果：
+```
+父类静态变量
+父类静态代码块
+子类静态变量
+子类静态代码块
+父类普通变量
+父类代码块
+父类构造方法
+子类普通变量
+子类代码块
+子类构造方法
+=====================================
+父类普通变量
+父类代码块
+父类构造方法
+子类普通变量
+子类代码块
+子类构造方法
+=====================================
+父类普通变量
+父类代码块
+父类构造方法
+```
+
 <br>
 
 ## 8.类的加载
