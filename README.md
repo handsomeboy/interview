@@ -47,7 +47,7 @@ SDN开发面试，重点关注内容为：SDN基础，流表的下发、传统�
 
 + [什么是内存泄漏？怎样解决？](http://www.bcoder.top/2017/03/22/JAVA%E5%86%85%E5%AD%98%E6%B3%84%E9%9C%B2%E5%88%86%E6%9E%90/)
 
-+ [说说compareTo和compare方法的比较]()
++ [说说compareTo和compare方法的比较](https://github.com/zlnnjit/interview/blob/master/java/%E8%AF%B4%E8%AF%B4compareTo%E5%92%8Ccompare%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83.md)
 
 ### java集合
 
