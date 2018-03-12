@@ -9,5 +9,5 @@
 
 
 ### offcode分支
-这个是本人刷《剑指offer》的代码，代码语言为java,------>>>[入口](https://github.com/zlnnjit/interview/tree/offcode)
+这个是本人刷《剑指offer》的代码，代码语言为java------>>>[入口](https://github.com/zlnnjit/interview/tree/offcode)
 
