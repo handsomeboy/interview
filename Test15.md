@@ -121,6 +121,55 @@ public ListNode FindKthToTail(ListNode head,int k) {
 
 
 
+上面的两个指针（快慢指针）的解题方法会衍生出不少变种题。
+
+变种题1：
+
+题目：求链表的中间结点，即假如链表的个数为偶数，即返回中间两个结点中的任意一个
+假如链表的结点为奇数，返回中间结点。
+
+```java
+public ListNode FindMiddleNode(ListNode head) {
+    if (head == null || head.next == null) {
+        return head;
+    }
+
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast != null && fast.next != null) {
+        fast = fast.next.next;
+        slow = slow.next;
+    }
+    return slow;
+
+}
+```
+
+变种题2：
+题目：判断一个单向链表是否形成了环状结构。
+
+和前面的问题一样，定义两个指针，同时从链表的头结点出发，一个指针一次走一步，另外一个指针一次走两步。如果走得快的指针追上了走得慢的指针，那么链表就是环状结构；如果走得快的指针走到了链表的末尾（m_pNext指向NULL）都没有追上走得慢的指针，那么链表就不是环状结构。
+
+```java
+public boolean isAnnulus(ListNode head) {
+    if (head == null || head.next == null) {
+        return false;
+    }
+
+    ListNode slow = head;
+    ListNode fast = head;
+    while (fast != null && fast.next != null) {
+        fast = fast.next.next;
+        slow = slow.next;
+        if (fast == slow){
+            return true;
+        }
+    }
+    return false;
+
+}
+```
+
 
 
 
